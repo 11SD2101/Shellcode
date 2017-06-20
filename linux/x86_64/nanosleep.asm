@@ -1,14 +1,16 @@
-; nanosleep({10, 0}, NULL)
-xor	rax, rax
-push	rax
-mov	bl, 10
-push	rbx
-mov	rdi, rsp
-xor	rsi, rsi
-mov	al, 35
+; nanosleep({10,0}, NULL)
+xor rax, rax
+push rax
+mov al, 0xa
+push rax
+push rsp
+pop rdi
+xor rsi, rsi 
+mov	al, 0x23
 syscall
 
 ; exit(0)
-mov	al, 60
-xor	rdi, rdi
+xor rax, rax
+mov al, 0x3c
+xor rdi, rdi
 syscall
