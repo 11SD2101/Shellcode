@@ -18,6 +18,16 @@ mov rsi, rsp
 mov dl, 0xff
 syscall
 
+; write(1, $rsp, 0x0f)
+xor rax, rax
+xor rdi, rdi
+inc rdi
+mov rsi, rsp
+cdq
+mov dl, 0x0f
+inc rax
+syscall
+
 ; close(fd)
 mov rdi, r8
 xor rax, rax
